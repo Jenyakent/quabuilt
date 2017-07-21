@@ -1,0 +1,8 @@
+.catalog__item(data-filter="[[+tv.tags]]")
+    section.project-excerpt
+       a(href="{$uri}").project-excerpt__figure
+          img(src="{$_pls[\'455x305\']}", alt="").project-excerpt__image
+       .project-excerpt__caption
+           .project-excerpt__subtitle {$longtitle}
+           h2.project-excerpt__title
+              a(href="{$uri}").project-excerpt__title-link {$pagetitle}

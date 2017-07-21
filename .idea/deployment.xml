@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" serverName="QualityBuilt" exclude=".svn;.cvs;.idea;.DS_Store;.git;.hg;*.jade" autoUploadExternalChanges="true">
+    <serverData>
+      <paths name="QualityBuilt">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/core/elements" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="artcodestudio">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/www/core/elements" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>

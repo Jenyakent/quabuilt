@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="62138015-064a-464e-a51c-b5e80800f1e4" name="artcodestudio" url="http://s7300@h6.modhost.pro">
+        <fileTransfer host="s7300@h6.modhost.pro" port="22" rootFolder="/home/s7300" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="8b4a2989-5de8-428c-ba2b-fd45236554a7" name="QualityBuilt" url="http://ftp.qualitybuiltconstr.com">
+        <fileTransfer host="ftp.qualitybuiltconstr.com" port="21" rootFolder="/public_html">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

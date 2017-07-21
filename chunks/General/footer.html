@@ -1,0 +1,5 @@
+{var $email = $_modx->config.email}
+{var $phone = $_modx->config.phone}
+{var $ig = $_modx->config.ig_link}
+{var $fb = $_modx->config.fb_link}<footer class="footer"><div class="footer__main"><div class="wrapper"><div class="footer__main-inner"><div class="footer__nav-field"><!--Footer menu--><nav class="bottom-nav">{$_modx->runSnippet('pdoMenu@footer_menu',[
+'parents' => 0])}</nav></div><div class="footer__contacts-field"><a href="tel:{$phone}">{$_modx->config.phone}</a><br/><a href="mailto:{$email}">{$_modx->config.email}</a><br> Business hours: {$_modx->config.time}</div><div class="footer__social-field"><div class="social-label">Social:</div><div class="social"><a href="{$fb}" class="social__link social__link_fb"></a><a href="{$ig}" class="social__link social__link_ig"></a></div></div><div class="footer__dev-field"><a href="http://axora.by/" target="_blank" class="dev"><img src="/assets/images/axora.png" alt="" class="dev__img"/></a></div></div></div></div><div class="footer-bottom"><div class="wrapper"><div class="footer__bottom-inner"><div class="footer__copyright">© 2016 QualityBuilt Construction, all rights reserved</div></div></div></div></footer>

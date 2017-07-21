@@ -1,0 +1,13 @@
+section.latest-project
+    .latest-project__content
+        h2.latest-projects__title.block-title Our latest projects
+        h2.latest-project__title {$pagetitle}
+        .latest-project__subtitle {$longtitle}
+        .latest-project__text
+                p {$description}
+    .latest-project__image-wrapper
+        .latest-project__image-inner
+            a(href='{$uri}')
+                img(src='{$_pls[\'506x340\']}', alt='').latest-project__image
+    .latest-project__footer
+        a(href='{$uri}').btn.btn_large.latest-project__btn View project

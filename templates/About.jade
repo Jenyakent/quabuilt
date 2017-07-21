@@ -1,0 +1,24 @@
+|{extends 'file:templates/Base.html'} {block 'content'}
+.page-wrapper
+    section.page-content
+        .wrapper
+            section.about
+               .about__inner
+                   h1.about__title.page-title {$_modx->resource.pagetitle}
+                   .about__content
+                       blockquote.quote {$_modx->resource.content}
+               .about__person
+                   .about__person-figure
+                       img(src="/assets/images/resources/4/person.jpg").about__person-img
+                   .about__person-caption
+                       h2.about__person-name Pasha Supron
+                       .about__person-position General manager
+               .about__btn-field
+                   a(href="{3 | url}").btn.about__btn View projects
+
+
+
+
+
+
+|{/block}

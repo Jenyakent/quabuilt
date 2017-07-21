@@ -1,0 +1,38 @@
+|{var $email = $_modx->config.email}
+|{var $phone = $_modx->config.phone}
+|{var $logo = $_modx->config.logo}
+|{var $ig = $_modx->config.ig_link}
+|{var $fb = $_modx->config.fb_link}
+header.header
+   .header__top
+       .top-line
+           .wrapper
+               .top-line__inner
+                   .top-line__phone-field
+                       a(href='tel:{$phone}') {$_modx->config.phone}
+                   .top-line__email-field
+                       a(href='mailto:{$email}') {$_modx->config.email}
+                   .top-line__schedule-field Business hours: {$_modx->config.time}
+                   .top-line__social-field
+                       .social
+                           a(href='{$fb}').social__link.social__link_fb
+                           a(href='{$ig}').social__link.social__link_ig
+   .header__main(style='')
+       .wrapper
+           .header__main-inner
+               .header__logo
+                   a(href='/').logo
+                      img(src='{$logo}', alt='').logo__img
+               .header__content
+                   .header__nav
+                       //Header menu
+                       nav.nav
+                           |{$_modx->runSnippet('pdoMenu@header_menu',[
+                           |'parents' => 0])}
+
+                   .header__btn-field
+                       a(href='/contacts#contact-form').btn.contact-btn Contact us
+                   <button type="button" class="header__close"></button>
+               <button type="button" class="header__burger"></button>
+
+

@@ -1,0 +1,6 @@
+{extends 'file:templates/Base.html'} {block 'content'}<div class="page-wrapper"><section class="page-content"><div class="wrapper"><h1 class="page-title">{$_modx->resource.pagetitle}</h1><ul class="filter"><li class="filter__item"><a href="#" data-filter="all" class="filter__link is-active"><span class="filter__link-text">All</span></a></li>{$_modx->runSnippet('pdoResources@project_change2',['parents' => 2])}</ul><div class="catalog"><div class="catalog__inner">{$_modx->runSnippet('ms2GalleryResources',[
+'parents' => 3,
+'includeThumbs' => '455x305',
+'includeTVs' => 'tags',
+'where' => '{«tags:LIKE»:"%[[*tags]]%"}',
+'tpl' => '@FILE chunks/projects/catalog__item.html'])}</div></div></div></section></div>{/block}

@@ -1,0 +1,29 @@
+|{extends 'file:templates/Base.html'} {block 'content'}
+|{var $email = $_modx->config.email}
+|{var $phone = $_modx->config.phone}
+|{var $logo = $_modx->config.company_name}
+.page-wrapper
+    section.page-content
+        .wrapper
+            h1.page-title {$_modx->resource.longtitle}
+            #contact-form
+                .contacts-info
+                    .contacts-info__section Phone:
+                        a(href='tel:{$phone}') {$_modx->config.phone}
+                        br
+                        a(href='mailto:{$email}') {$_modx->config.email}
+                        br
+                        |Business hours: {$_modx->config.time}
+                    .contacts-info__section
+                        | {$_modx->config.company_name}, <br> {$_modx->config.address}
+                section.form-block
+                    | {$_modx->runSnippet('!AjaxForm',[
+                    | 'snippet' => 'FormIt',
+                    | 'form' => '@FILE chunks/contacts_form.html',
+                    | 'hooks' => 'email',
+                    | 'emailTo' => 'vgrishman@gmail.com',
+                    | 'successMessage' => 'Сообщение успешно отправлено'
+                    | ])}
+
+
+|{/block}

@@ -1,0 +1,74 @@
+form(method="post", action="").ajax_form
+    section.form-block__content
+        header.form-block__header
+            .form-block__person
+                img(src='/assets/images/resources/5/person-small.jpg').form-block__person-img
+                .form-block__person-name Pasha Supron
+                .form-block__person-position General manager
+            h2.form-block__title  Complete the brief contact form and we will contact you shortly
+        .form-section.form-section_1
+            .form-group
+                .form-group__col
+                    .form-row
+                        label.form-label Your name
+                        input(name="name", id="name", type="text").validate
+
+                .form-group__col
+                    .form-row
+                        label.form-label Phone
+                        input(name="phone",id="phone", type="text").validate
+                .form-group__col
+                    .form-row
+                        label.form-label Email
+                        input(name="email", id="email", type="email").validate
+        .form-section.form-section_2
+            h2.form-section__title  How did you hear about us?
+            .form-group.check-group
+                .form-group__col
+                    .check-row
+                        label
+                            span.checkbox-field
+                                input(name="Word of Mouth referral",  type="radio").checkbox-field__input
+                                span.checkbox-field__content
+                            | Word of Mouth referral
+                    .check-row
+                        label
+                            span.checkbox-field
+                                input(name="Internet Search Engine",  type="radio").checkbox-field__input
+                                span.checkbox-field__content
+                            | Internet Search Engine
+                .form-group__col
+                    .check-row
+                        label
+                            span.checkbox-field
+                                input(name="Online Directory Listing",  type="radio").checkbox-field__input
+                                span.checkbox-field__content
+                            | Online Directory Listing
+                    .check-row
+                        label
+                            span.checkbox-field
+                                input(name="Company Vehicle",  type="radio").checkbox-field__input
+                                span.checkbox-field__content
+                            | Company Vehicle
+                .form-group__col
+                    .check-row
+                        label
+                            span.checkbox-field
+                                input(name="Yard Sign",  type="radio").checkbox-field__input
+                                span.checkbox-field__content
+                            | Yard Sign
+                    .check-row
+                        label
+                            span.checkbox-field
+                                input(name="Other", type="radio").checkbox-field__input
+                                span.checkbox-field__content
+                            | Other
+        .form-section.form-section_3
+            .form-row
+                label.form-label.form-label_text Send a message, for example, «I want to repair the bath in my house, help me to evaluate its cost. I need this project to be completed in 2 weeks»
+                textarea(name="message", id="message")
+        .form-section.form-section_4
+            h2.form-section__title  Form Captcha Verification
+            <div class="g-recaptcha" data-sitekey="6LdyOAsUAAAAAIrFr42qEJMBwv_TZh-OiYUoyqL5"><div style="width: 304px; height: 78px;"><div><iframe src="https://www.google.com/recaptcha/api2/anchor?k=6LdyOAsUAAAAAIrFr42qEJMBwv_TZh-OiYUoyqL5&amp;co=ZmlsZTo.&amp;hl=en&amp;v=r20161102163809&amp;size=normal&amp;cb=5g767kgor85d" title="recaptcha widget" role="presentation" scrolling="no" name="undefined" width="304" height="78" frameborder="0"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid #c1c1c1; margin: 10px 25px; padding: 0px; resize: none;  display: none; "></textarea></div></div>
+    footer.form-block__footer
+        button(type="submit").btn.btn_large.form-block__btn Send

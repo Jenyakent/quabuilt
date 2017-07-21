@@ -1,0 +1,24 @@
+|{var $description = $_modx->resource.description}
+|{var $title = $_modx->resource.longtitle ?: $_modx->resource.pagetitle}
+|{var $favicon = $_modx->config.favicon}
+meta(http-equiv='Content-Type',content='text/html;charset=UTF-8')
+meta(http-equiv='X-UA-Compatible',content='IE=edge')
+meta(name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, minimum-scale=1")
+meta(name='description', content='{$description}')
+title {$title}
+base(href="qualitybuiltconstr.com")
+link(rel='shortcut icon', type='image/png', href='{$favicon}')
+link(rel='stylesheet',type="text/css", href='/assets/css/style.css')
+|{$_modx->runSnippet('MinifyX', ['cssSources' => '/assets/css/normalize.css, /assets/css/fancybox.css, /assets/css/slick.css, /assets/css/media.css, /assets/css/lightbox.css', 'minifyCss' => '1', 'jsSources' => ' /assets/js/sticky-kit.min.js, /assets/js/fancybox.pack.js, /assets/js/jquery.validate.min.js, /assets/js/scripts.js, /assets/js/slick/slick.min.js', 'minifyJs' => '1','registerCss' => 'default', 'registerJs' => 'default' ])}
+
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+|{ignore}
+<script> (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create', 'UA-80338199-29', 'auto');ga('send', 'pageview');
+</script>
+|{/ignore}
+
+
+

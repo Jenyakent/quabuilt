@@ -1,0 +1,6 @@
+{extends 'file:templates/Base.html'} {block 'content'}<div class="page-wrapper"><section style="padding-top:0" class="page-content"><section class="project"><section class="project-image"><div style="background-image: url('[[+ms2g.0.url]]')" class="project-image__bg"></div><div class="project-image__wrapper"><div class="project-image__inner"><div class="wrapper"><div class="project-image__content"><div class="project-image__subtitle">{$_modx->resource.longtitle}</div><h1 class="project-image__title">{$_modx->resource.pagetitle}</h1></div></div></div></div></section><div class="wrapper">{include 'file:chunks/projects/project_chunk.html'}</div></section><div class="projects-section-wrapper"><div class="wrapper"><section class="projects-section"><h2 class="projects-section__title block-title">Other projects</h2><div class="projects-wrapper">{$_modx->runSnippet('ms2GalleryResources', [
+'parents' => 3,
+'resources' => -$_modx->resource.id,
+'includeThumbs' => '455x305',
+'tpl' => ' @FILE chunks/projects/projects_slider.html',
+'tplWrapper' => '@INLINE <div class="projects slick-slider">[[+output]]</div><button type="button" class="projects-more"></button>'])}</div></section></div></div></section></div>{/block}

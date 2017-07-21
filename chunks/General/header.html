@@ -1,0 +1,6 @@
+{var $email = $_modx->config.email}
+{var $phone = $_modx->config.phone}
+{var $logo = $_modx->config.logo}
+{var $ig = $_modx->config.ig_link}
+{var $fb = $_modx->config.fb_link}<header class="header"><div class="header__top"><div class="top-line"><div class="wrapper"><div class="top-line__inner"><div class="top-line__phone-field"><a href="tel:{$phone}">{$_modx->config.phone}</a></div><div class="top-line__email-field"><a href="mailto:{$email}">{$_modx->config.email}</a></div><div class="top-line__schedule-field">Business hours: {$_modx->config.time}</div><div class="top-line__social-field"><div class="social"><a href="{$fb}" class="social__link social__link_fb"></a><a href="{$ig}" class="social__link social__link_ig"></a></div></div></div></div></div></div><div style="" class="header__main"><div class="wrapper"><div class="header__main-inner"><div class="header__logo"><a href="/" class="logo"><img src="{$logo}" alt="" class="logo__img"/></a></div><div class="header__content"><div class="header__nav"><!--Header menu--><nav class="nav">{$_modx->runSnippet('pdoMenu@header_menu',[
+'parents' => 0])}</nav></div><div class="header__btn-field"><a href="/contacts#contact-form" class="btn contact-btn">Contact us</a></div><button type="button" class="header__close"></button></div><button type="button" class="header__burger"></button></div></div></div></header>

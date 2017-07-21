@@ -1,0 +1,22 @@
+<!DOCTYPE html><html lang="en"><head>{block 'head'}
+{include 'file:chunks/General/head.html'}
+{/block}
+
+</head><body>{block 'header'}
+{include 'file:chunks/General/header.html'}
+{/block}
+
+{block 'content'}
+{$_modx->resource.content}
+{/block}
+
+{block 'footer'}
+{include 'file:chunks/General/footer.html'}
+{/block}
+{include 'file:chunks/modal_contact.html'}
+
+<!-- Render time: [^t^] -->
+<div class="mobile-test"></div>
+<script src="/assets/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="https://www.google.com/recaptcha/api.js?hl=en"></script>
+<script src="/assets/js/lightbox.min.js" type="text/javascript"></script></body></html>

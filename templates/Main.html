@@ -1,0 +1,21 @@
+{extends 'file:templates/Base.html'} {block 'content'}<div class="page-wrapper"><!--Main slider--><section style="padding-top:0" class="page-content"><section class="mian-slider-wrapper">{$_modx->runSnippet('ms2Gallery', [
+'parents' => 1,
+'resources'=> 21,
+'tplRow' => ' @FILE chunks/main/slider.html',
+'tplOuter' => '@INLINE <div class="mian-slider slick-slider">[[+rows]]</div>'])}<div class="mian-slider__overlay"><div class="mian-slider__overlay-inner"><div class="mian-slider__overlay-content"><img src="assets/images/main-slider-overlay.png" alt="" class="mian-slider__overlay-img"/></div></div></div></section><section class="latest-projects-wrapper"><div class="wrapper"><div class="latest-projects"><div class="latest-project__item">{$_modx->runSnippet('ms2GalleryResources', [
+'parents' => 3,
+'includeThumbs' => '506x340',
+'includeOriginal' => '1',
+'includeTVs' => 'main_checkbox',
+'prepapreTVs' => '1',
+'processTVs' => '1',
+'where' => '{"main_checkbox:!=":"0"}',
+'tpl' => '@FILE chunks/projects/latest_project.html'
+'limit' => 1,
+'sortby' => 'publishedon'
+])}</div></div></div></section><!--Parallax block--><section style="background-image: url(&quot;assets/images/main/main-about-bg.jpg&quot;);" class="main-about-block"><div class="main-about-block__inner"><div class="wrapper"><div class="main-about-block__content"><h2 class="main-about-block__title"> {$_modx->resource.introtext}</h2></div></div></div></section><section class="main-services-block"><div class="wrapper"><div class="main-services"><ul class="main-services-list">{$_modx->runSnippet('pdoResources',[
+'parents' => 2,
+'tpl' => '@FILE chunks/main/main_services_item.html',
+'sortdir' => 'ASC',
+'limit' => 30
+])}</ul></div></div></section><section class="main-projects-block">{$_modx->resource.content}</section><section class="main-work-scheme-block"><div class="wrapper"><section class="main-work-scheme"><h2 class="main-work-scheme__title block-title">How we work</h2><div class="work-scheme"><div class="work-scheme__item"><img src="assets/images/work-scheme-1.png" alt="" class="work-scheme__image"/><div class="work-scheme__description">You call us</div></div><div class="work-scheme__item"><img src="assets/images/work-scheme-2.png" alt="" class="work-scheme__image"/><div class="work-scheme__description">We come to your house and give you a free consultation</div></div><div class="work-scheme__item"><img src="assets/images/work-scheme-3.png" alt="" class="work-scheme__image"/><div class="work-scheme__description">Send you our ideas with an estimated cost</div></div><div class="work-scheme__item"><img src="assets/images/work-scheme-4.png" alt="" class="work-scheme__image"/><div class="work-scheme__description">Start the project upon your approval</div></div></div></section></div></section></section></div>{/block}

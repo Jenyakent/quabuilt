@@ -1,0 +1,15 @@
+
+.services__item(data-service="{$alias}")
+    .service
+        .service__wrapper
+            .service__inner
+                .service__image-field
+                    img(src="{$_pls[\'290x208.original\']}").service__image
+                h2.service__title {$pagetitle}
+                .service__description
+                    .service__description-inner
+                        p {$introtext}
+                    .service__more-field
+                        button(type='button').service__more
+                .service__btn-field
+                    a(href='{3 | url}#[[+alias]]').btn.btn_large.service__btn View projects

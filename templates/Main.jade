@@ -1,0 +1,71 @@
+|{extends 'file:templates/Base.html'} {block 'content'}
+.page-wrapper
+    //Main slider
+    section.page-content(style='padding-top:0')
+       section.mian-slider-wrapper
+           | {$_modx->runSnippet('ms2Gallery', [
+           | 'parents' => 1,
+           | 'resources'=> 21,
+           | 'tplRow' => ' @FILE chunks/main/slider.html',
+           | 'tplOuter' => '@INLINE <div class="mian-slider slick-slider">[[+rows]]</div>'])}
+           .mian-slider__overlay
+               .mian-slider__overlay-inner
+                   .mian-slider__overlay-content
+                       img(src='assets/images/main-slider-overlay.png', alt='').mian-slider__overlay-img
+
+       section.latest-projects-wrapper
+           .wrapper
+               .latest-projects
+                   .latest-project__item
+                       | {$_modx->runSnippet('ms2GalleryResources', [
+                       | 'parents' => 3,
+                       | 'includeThumbs' => '506x340',
+                       | 'includeOriginal' => '1',
+                       | 'includeTVs' => 'main_checkbox',
+                       | 'prepapreTVs' => '1',
+                       | 'processTVs' => '1',
+                       | 'where' => '{"main_checkbox:!=":"0"}',
+                       | 'tpl' => '@FILE chunks/projects/latest_project.html'
+                       | 'limit' => 1,
+                       | 'sortby' => 'publishedon'
+                       | ])}
+       //Parallax block
+       section.main-about-block(style='background-image: url("assets/images/main/main-about-bg.jpg");')
+           .main-about-block__inner
+               .wrapper
+                   .main-about-block__content
+                       h2.main-about-block__title  {$_modx->resource.introtext}
+
+       section.main-services-block
+          .wrapper
+              .main-services
+                  ul.main-services-list
+                   | {$_modx->runSnippet('pdoResources',[
+                   | 'parents' => 2,
+                   | 'tpl' => '@FILE chunks/main/main_services_item.html',
+                   | 'sortdir' => 'ASC',
+                   | 'limit' => 30
+                   |])}
+
+
+       section.main-projects-block
+           | {$_modx->resource.content}
+       section.main-work-scheme-block
+           .wrapper
+               section.main-work-scheme
+                  h2.main-work-scheme__title.block-title How we work
+                  .work-scheme
+                      .work-scheme__item
+                          img(src='assets/images/work-scheme-1.png', alt='').work-scheme__image
+                          .work-scheme__description You call us
+                      .work-scheme__item
+                          img(src='assets/images/work-scheme-2.png', alt='').work-scheme__image
+                          .work-scheme__description We come to your house and give you a free consultation
+                      .work-scheme__item
+                          img(src='assets/images/work-scheme-3.png', alt='').work-scheme__image
+                          .work-scheme__description Send you our ideas with an estimated cost
+                      .work-scheme__item
+                          img(src='assets/images/work-scheme-4.png', alt='').work-scheme__image
+                          .work-scheme__description Start the project upon your approval
+
+|{/block}

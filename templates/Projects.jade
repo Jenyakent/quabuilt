@@ -1,0 +1,23 @@
+|{extends 'file:templates/Base.html'} {block 'content'}
+.page-wrapper
+    section.page-content
+        .wrapper
+            h1.page-title {$_modx->resource.pagetitle}
+            ul.filter
+                li.filter__item
+                   a(href="#", data-filter="all").filter__link.is-active
+                      span.filter__link-text All
+                |{$_modx->runSnippet('pdoResources@project_change2',['parents' => 2])}
+
+            .catalog
+                .catalog__inner
+                    | {$_modx->runSnippet('ms2GalleryResources',[
+                    | 'parents' => 3,
+                    | 'includeThumbs' => '455x305',
+                    | 'includeTVs' => 'tags',
+                    | 'where' => '{«tags:LIKE»:"%[[*tags]]%"}',
+                    | 'tpl' => '@FILE chunks/projects/catalog__item.html'])}
+
+|{/block}
+
+

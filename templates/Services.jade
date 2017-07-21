@@ -1,0 +1,32 @@
+|{extends 'file:templates/Base.html'} {block 'content'}
+.page-wrapper
+    section.page-content
+       .wrapper
+           h1.page-title {$_modx->resource.pagetitle}
+           section.services
+              .services__header {$_modx->resource.introtext}
+              .services__aside
+                  | {$_modx->runSnippet('pdoResources',[
+                  | 'parents' => 2,
+                  | 'limit' => '30',
+                  | 'sortdir' => 'ASC',
+                  | 'tplWrapper' => '@INLINE <ul class="services__nav">[[+output]]</ul>',
+                  | 'tplFirst' => '@INLINE <li class="services__nav-item"><a class="services__nav-link is-active " href="{2 | url}#" data-service="{$alias}"><span class="services__nav-text">[[+pagetitle]]</span></a></li>',
+                  | 'tpl' => '@INLINE <li class="services__nav-item"><a class="services__nav-link " href="{2 | url}#" data-service="{$alias}"><span class="services__nav-text">[[+pagetitle]]</span></a></li>'])}
+              .services__content
+                  | {$_modx->runSnippet('ms2GalleryResources',[
+                  | 'parents' => 2,
+                  | 'includeThumbs' => '290x208',
+                  | 'includeOriginal' => '1',
+                  | 'limit' => '30',
+                  | 'sortdir' => 'ASC',
+                  | 'tplFirst' => '@FILE chunks/services/first_service_item.html',
+                  | 'tpl' => '@FILE chunks/services/services__item.html'])}
+
+
+
+
+
+|{/block}
+
+

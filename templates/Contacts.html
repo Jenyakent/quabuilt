@@ -1,0 +1,10 @@
+{extends 'file:templates/Base.html'} {block 'content'}
+{var $email = $_modx->config.email}
+{var $phone = $_modx->config.phone}
+{var $logo = $_modx->config.company_name}<div class="page-wrapper"><section class="page-content"><div class="wrapper"><h1 class="page-title">{$_modx->resource.longtitle}</h1><div id="contact-form"><div class="contacts-info"><div class="contacts-info__section">Phone:<a href="tel:{$phone}">{$_modx->config.phone}</a><br/><a href="mailto:{$email}">{$_modx->config.email}</a><br/>Business hours: {$_modx->config.time}</div><div class="contacts-info__section">{$_modx->config.company_name}, <br> {$_modx->config.address}</div></div><section class="form-block">{$_modx->runSnippet('!AjaxForm',[
+'snippet' => 'FormIt',
+'form' => '@FILE chunks/contacts_form.html',
+'hooks' => 'email',
+'emailTo' => 'vgrishman@gmail.com',
+'successMessage' => 'Сообщение успешно отправлено'
+])}</section></div></div></section></div>{/block}

@@ -1,0 +1,28 @@
+|{extends 'file:templates/Base.html'} {block 'content'}
+.page-wrapper
+    section.page-content(style="padding-top:0")
+       section.project
+          section.project-image
+             .project-image__bg(style="background-image: url('[[+ms2g.0.url]]')")
+             .project-image__wrapper
+                 .project-image__inner
+                     .wrapper
+                         .project-image__content
+                             .project-image__subtitle {$_modx->resource.longtitle}
+                             h1.project-image__title {$_modx->resource.pagetitle}
+          .wrapper
+             |{include 'file:chunks/projects/project_chunk.html'}
+       .projects-section-wrapper
+           .wrapper
+               section.projects-section
+                 h2.projects-section__title.block-title Other projects
+                 .projects-wrapper
+                         | {$_modx->runSnippet('ms2GalleryResources', [
+                         | 'parents' => 3,
+                         | 'resources' => -$_modx->resource.id,
+                         | 'includeThumbs' => '455x305',
+                         | 'tpl' => ' @FILE chunks/projects/projects_slider.html',
+                         | 'tplWrapper' => '@INLINE <div class="projects slick-slider">[[+output]]</div><button type="button" class="projects-more"></button>'])}
+
+|{/block}
+
